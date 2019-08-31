@@ -1,13 +1,25 @@
 {
-  "name": "my-guten-plugin-cgb-guten-block",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "cgb-scripts start",
-    "build": "cgb-scripts build",
-    "eject": "cgb-scripts eject"
-  },
-  "dependencies": {
-    "cgb-scripts": "1.20.0"
-  }
+	"name": "my-guten-plugin-cgb-guten-block",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"start": "cgb-scripts start",
+		"build": "cgb-scripts build",
+		"eject": "cgb-scripts eject",
+		"env:start": "node ./tools/local-env/scripts/start.js",
+		"env:stop": "node ./tools/local-env/scripts/docker.js down",
+		"env:clean": "node ./tools/local-env/scripts/docker.js down -v --remove-orphans",
+		"env:reset": "node ./tools/local-env/scripts/docker.js down --rmi all -v --remove-orphans",
+		"env:install": "node ./tools/local-env/scripts/install.js",
+		"env:cli": "node ./tools/local-env/scripts/docker.js run cli",
+		"env:logs": "node ./tools/local-env/scripts/docker.js logs",
+		"env:pull": "node ./tools/local-env/scripts/docker.js pull"
+	},
+	"dependencies": {
+		"cgb-scripts": "1.20.0"
+	},
+	"devDependencies": {
+		"dotenv": "^8.1.0",
+		"wait-on": "^3.3.0"
+	}
 }
