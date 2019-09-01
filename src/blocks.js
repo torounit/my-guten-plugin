@@ -30,7 +30,7 @@ const PostSelector = ( ( { postId, posts, setPostId } ) => {
 	return (
 		<SelectControl
 			name={ 'post-relationship' }
-			label={ __( 'Writer', 'post-relationship' ) }
+			label={ __( 'Post', 'post-relationship' ) }
 			value={ postId }
 			options={ [
 				{
@@ -91,11 +91,11 @@ const PluginPanel = () => (
 const Component = () => (
 	<Fragment>
 		<PluginSidebarMoreMenuItem target={ 'post-relationship' }>
-			{ __( 'Writer' ) }
+			{ __( 'Post' ) }
 		</PluginSidebarMoreMenuItem>
 		<PluginSidebar
 			name={ 'post-relationship' }
-			title={ __( 'Writer', 'post-relationship' ) }
+			title={ __( 'Post', 'post-relationship' ) }
 		>
 			<Panel>
 				<PluginPanel />
@@ -116,7 +116,7 @@ const Component = () => (
 
 if ( PluginDocumentSettingPanel ) {
 	registerPlugin( 'post-relationship', {
-		icon: 'admin-users',
+		icon: 'admin-post',
 		render: () => (
 			<Fragment>
 				<PluginDocumentSettingPanel className="my-document-setting-plugin" title="My Panel">
@@ -130,7 +130,7 @@ if ( PluginDocumentSettingPanel ) {
 }else {
 
 	registerPlugin( 'post-relationship', {
-		icon: 'admin-users',
+		icon: 'admin-post',
 		render: Component,
 	} );
 }
